@@ -19,32 +19,40 @@ public class NotificacaoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity criar(@RequestBody @Valid DadosCriarNotificacao dados, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity create(@RequestBody @Valid DtoCreateNotificacao dados, UriComponentsBuilder uriBuilder) {
         var notificacao = new Notificacao(dados);
         repository.save(notificacao);
 
         var uri = uriBuilder.path("/notificacao/{id}").buildAndExpand(notificacao.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoNotificacao(notificacao));
+        return ResponseEntity.created(uri).body(new DtoDetailNotificacao(notificacao));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity detalhar(@PathVariable Long id) {
+    public ResponseEntity detail(@PathVariable Long id) {
         var notificaco = repository.getReferenceById(id);
-        return ResponseEntity.ok(new DadosDetalhamentoNotificacao(notificaco));
+        return ResponseEntity.ok(new DtoDetailNotificacao(notificaco));
     }
 
     @GetMapping
-    public ResponseEntity<Page<DadosListarNotificacao>> listar(@PageableDefault(size = 10) Pageable pageable) {
-        var page = repository.findAll(pageable).map(DadosListarNotificacao::new);
+    public ResponseEntity<Page<DtoListNotificacao>> list(@PageableDefault(size = 10) Pageable pageable) {
+        var page = repository.findAll(pageable).map(DtoListNotificacao::new);
         return ResponseEntity.ok(page);
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizarNotificacao dados) {
+    public ResponseEntity update(@RequestBody @Valid DtoUpdateNotificacao dados) {
         var notificacao = repository.getReferenceById(dados.id());
-        notificacao.AtualizarDados(dados);
-        return ResponseEntity.ok(new DadosDetalhamentoNotificacao(notificacao));
+        notificacao.updateDados(dados);
+        return ResponseEntity.ok(new DtoDetailNotificacao(notificacao));
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity cancelar_envio(@PathVariable Long id) {
+        var notificacao = repository.getReferenceById(id);
+        notificacao.cancelar_envio();
+        return ResponseEntity.noContent().build();
     }
 
 }

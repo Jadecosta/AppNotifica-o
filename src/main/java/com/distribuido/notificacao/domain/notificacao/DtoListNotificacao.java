@@ -1,16 +1,14 @@
 package com.distribuido.notificacao.domain.notificacao;
 
-import org.aspectj.weaver.ast.Not;
-
 import java.time.LocalDateTime;
 
-public record DadosListarNotificacao(
+public record DtoListNotificacao(
         Long id,
         String titulo,
         LocalDateTime data_envio,
         Boolean enviado
 ) {
-    public DadosListarNotificacao(Notificacao notificacao){
+    public DtoListNotificacao(Notificacao notificacao){
         this(
                 notificacao.getId(),
                 notificacao.getTitulo(),
