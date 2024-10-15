@@ -1,11 +1,10 @@
 package com.distribuido.notificacao.domain.notificacao;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
-public record DadosAtualizarNotificacao(
+public record DtoUpdateNotificacao(
         @NotNull
         Long id,
         String titulo,

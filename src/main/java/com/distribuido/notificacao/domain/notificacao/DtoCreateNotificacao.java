@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
-public record DadosCriarNotificacao(
+public record DtoCreateNotificacao(
         @NotBlank
         String titulo,
         @NotBlank

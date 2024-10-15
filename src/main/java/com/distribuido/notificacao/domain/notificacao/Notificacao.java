@@ -23,6 +23,7 @@ public class Notificacao {
     private String mensagem;
     private LocalDateTime data_envio;
     private Boolean enviado;
+    private Boolean envio_cancelado;
 
     @Column(name = "updated_at")
     @UpdateTimestamp
@@ -32,17 +33,19 @@ public class Notificacao {
     private LocalDateTime createdAt;
 
 //    criar o campo que registra o usuario mandou a mensagem
-//    Criar o campo que aponta para o grupo que irá receber a notificaçahno
+//    Criar o campo que aponta para o grupo que ira receber a notificacao
 
-    public Notificacao(DadosCriarNotificacao dados) {
+
+    public Notificacao(DtoCreateNotificacao dados) {
         this.titulo = dados.titulo();
         this.mensagem = dados.mensagem();
         this.data_envio = dados.data_envio();
         this.enviado = false;
+        this.envio_cancelado = false;
     }
 
-    public void AtualizarDados(@Valid DadosAtualizarNotificacao dados) {
-        if(!enviado) {
+    public void updateDados(@Valid DtoUpdateNotificacao dados) {
+        if(!this.enviado) {
             if(dados.titulo() != null) {
                 this.titulo = dados.titulo();
             }
@@ -53,5 +56,9 @@ public class Notificacao {
                 this.data_envio = dados.data_envio();
             }
         }
+    }
+
+    public void cancelar_envio() {
+        this.envio_cancelado = true;
     }
 }
