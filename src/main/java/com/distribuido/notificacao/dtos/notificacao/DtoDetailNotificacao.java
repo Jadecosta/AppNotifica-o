@@ -1,4 +1,6 @@
-package com.distribuido.notificacao.domain.notificacao;
+package com.distribuido.notificacao.dtos.notificacao;
+
+import com.distribuido.notificacao.models.NotificacaoModel;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +14,7 @@ public record DtoDetailNotificacao(
         Boolean enviado,
         Boolean envio_cancelado
 ) {
-public DtoDetailNotificacao(Notificacao notificacao) {
+public DtoDetailNotificacao(NotificacaoModel notificacao) {
     this(
             notificacao.getId(),
             notificacao.getTitulo(),

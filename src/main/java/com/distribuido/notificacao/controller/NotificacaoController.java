@@ -1,6 +1,11 @@
 package com.distribuido.notificacao.controller;
 
-import com.distribuido.notificacao.domain.notificacao.*;
+import com.distribuido.notificacao.dtos.notificacao.DtoCreateNotificacao;
+import com.distribuido.notificacao.dtos.notificacao.DtoDetailNotificacao;
+import com.distribuido.notificacao.dtos.notificacao.DtoListNotificacao;
+import com.distribuido.notificacao.dtos.notificacao.DtoUpdateNotificacao;
+import com.distribuido.notificacao.models.NotificacaoModel;
+import com.distribuido.notificacao.repository.NotificacaoRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +25,7 @@ public class NotificacaoController {
     @PostMapping
     @Transactional
     public ResponseEntity create(@RequestBody @Valid DtoCreateNotificacao dados, UriComponentsBuilder uriBuilder) {
-        var notificacao = new Notificacao(dados);
+        var notificacao = new NotificacaoModel(dados);
         repository.save(notificacao);
 
         var uri = uriBuilder.path("/notificacao/{id}").buildAndExpand(notificacao.getId()).toUri();

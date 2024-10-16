@@ -1,4 +1,4 @@
-package com.distribuido.notificacao.domain.notificacao;
+package com.distribuido.notificacao.dtos.notificacao;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
