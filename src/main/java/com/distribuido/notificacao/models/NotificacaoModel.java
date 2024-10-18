@@ -4,8 +4,6 @@ import com.distribuido.notificacao.dtos.notificacao.DtoCreateNotificacao;
 import com.distribuido.notificacao.dtos.notificacao.DtoUpdateNotificacao;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -23,9 +21,9 @@ public class NotificacaoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @Column(nullable = false, length = 125)
     private String titulo;
-    @Column(nullable = false)
+    @Column(nullable = false,length = 500)
     private String mensagem;
     @Column(nullable = false)
     private LocalDateTime data_envio;
@@ -65,6 +63,8 @@ public class NotificacaoModel {
     }
 
     public void cancelar_envio() {
-        this.envio_cancelado = true;
+        if(!this.enviado) {
+            this.envio_cancelado = true;
+        }
     }
 }

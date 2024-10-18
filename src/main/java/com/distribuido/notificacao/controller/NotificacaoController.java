@@ -6,6 +6,7 @@ import com.distribuido.notificacao.dtos.notificacao.DtoListNotificacao;
 import com.distribuido.notificacao.dtos.notificacao.DtoUpdateNotificacao;
 import com.distribuido.notificacao.models.NotificacaoModel;
 import com.distribuido.notificacao.repository.NotificacaoRepository;
+import com.distribuido.notificacao.service.intefaces.NotificacaoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,43 +21,39 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/notificacao")
 public class NotificacaoController {
     @Autowired
-    private NotificacaoRepository repository;
+    private NotificacaoService service;
 
     @PostMapping
     @Transactional
-    public ResponseEntity create(@RequestBody @Valid DtoCreateNotificacao dados, UriComponentsBuilder uriBuilder) {
-        var notificacao = new NotificacaoModel(dados);
-        repository.save(notificacao);
-
-        var uri = uriBuilder.path("/notificacao/{id}").buildAndExpand(notificacao.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DtoDetailNotificacao(notificacao));
+    public ResponseEntity create(@RequestBody @Valid DtoCreateNotificacao dados) {
+        DtoDetailNotificacao notificacao = service.createNotificacao(dados);
+//        Corrigir esse ResponseEntity retornando-o para o detail
+        return ResponseEntity.ok(notificacao);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity detail(@PathVariable Long id) {
-        var notificaco = repository.getReferenceById(id);
-        return ResponseEntity.ok(new DtoDetailNotificacao(notificaco));
+        DtoDetailNotificacao notificacao = service.getNotificaco(id);
+        return ResponseEntity.ok(notificacao);
     }
 
     @GetMapping
     public ResponseEntity<Page<DtoListNotificacao>> list(@PageableDefault(size = 10) Pageable pageable) {
-        var page = repository.findAll(pageable).map(DtoListNotificacao::new);
+        Page page = service.getAllNotificacao(pageable);
         return ResponseEntity.ok(page);
     }
 
     @PutMapping
     @Transactional
     public ResponseEntity update(@RequestBody @Valid DtoUpdateNotificacao dados) {
-        var notificacao = repository.getReferenceById(dados.id());
-        notificacao.updateDados(dados);
-        return ResponseEntity.ok(new DtoDetailNotificacao(notificacao));
+        DtoDetailNotificacao notificacao = service.updateNotificacao(dados);
+        return ResponseEntity.ok(notificacao);
     }
 
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity cancelar_envio(@PathVariable Long id) {
-        var notificacao = repository.getReferenceById(id);
-        notificacao.cancelar_envio();
+        service.deleteNotificacao(id);
         return ResponseEntity.noContent().build();
     }
 
