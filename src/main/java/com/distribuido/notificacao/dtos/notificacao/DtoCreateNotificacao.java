@@ -11,6 +11,8 @@ public record DtoCreateNotificacao(
         @NotBlank
         String mensagem,
         @NotNull
-        LocalDateTime data_envio
+        LocalDateTime data_envio,
+        @NotNull
+        Long professorId
 ) {
 }

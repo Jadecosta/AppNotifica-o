@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProfessorServiceImpl implements ProfessorService {
     @Autowired
-    ProfessorRepository repository;
+    private ProfessorRepository repository;
 
 
     @Override

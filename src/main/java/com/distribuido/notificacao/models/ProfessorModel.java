@@ -2,14 +2,13 @@ package com.distribuido.notificacao.models;
 
 import com.distribuido.notificacao.dtos.professor.DtoCreateProfessor;
 import com.distribuido.notificacao.dtos.professor.DtoUpdateProfessor;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.validation.Valid;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Set;
 
 
 @Entity(name = "ProfessorModel")
@@ -18,7 +17,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProfessorModel extends UsuarioModel {
+public class ProfessorModel extends UsuarioAbsModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @OneToMany(mappedBy = "professor",cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<NotificacaoModel> notificacoes;
 //  Tornar essa coluna em uma tabela
     @Column(name = "curso_ministrado", length = 100)
     private String cursoMinistrado;

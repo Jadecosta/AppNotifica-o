@@ -1,12 +1,8 @@
 package com.distribuido.notificacao.models;
 
 import com.distribuido.notificacao.dtos.notificacao.DtoCreateNotificacao;
-import com.distribuido.notificacao.dtos.notificacao.DtoUpdateNotificacao;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -17,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class NotificacaoModel {
+public class NotificacaoModel extends AuditableUserTimestampAbsModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,37 +25,22 @@ public class NotificacaoModel {
     private LocalDateTime data_envio;
     private Boolean enviado;
     private Boolean envio_cancelado;
-    @Column(name = "updated_at")
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-    @Column(name = "created_at", updatable = false)
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "professor_id", nullable = false)
+    private ProfessorModel professor;
 
-//    criar o campo que registra o usuario mandou a mensagem
 //    Criar o campo que aponta para o grupo que ira receber a notificacao
 
 
-    public NotificacaoModel(DtoCreateNotificacao dados) {
-        this.titulo = dados.titulo();
-        this.mensagem = dados.mensagem();
-        this.data_envio = dados.data_envio();
-        this.enviado = false;
-        this.envio_cancelado = false;
-    }
-
-    public void updateDados(@Valid DtoUpdateNotificacao dados) {
-        if(!this.enviado) {
-            if(dados.titulo() != null) {
-                this.titulo = dados.titulo();
-            }
-            if(dados.mensagem() != null) {
-                this.mensagem = dados.mensagem();
-            }
-            if(dados.data_envio() != null) {
-                this.data_envio = dados.data_envio();
-            }
-        }
+    public NotificacaoModel(DtoCreateNotificacao dados,ProfessorModel professor) {
+        this.setTitulo(dados.titulo());
+        this.setMensagem(dados.mensagem());
+        this.setData_envio(dados.data_envio());
+        this.setEnviado(false);
+        this.setEnvio_cancelado(false);
+        this.setProfessor(professor);
+//        manter enquanto nao existe implementacao de salvar o usuario automaticamente
+        this.setCreatedBy("TESTE");
     }
 
     public void cancelar_envio() {

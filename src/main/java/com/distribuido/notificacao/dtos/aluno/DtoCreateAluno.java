@@ -1,10 +1,11 @@
-package com.distribuido.notificacao.dtos.professor;
+package com.distribuido.notificacao.dtos.aluno;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public record DtoCreateProfessor(
+public record DtoCreateAluno(
         @NotBlank(message = "O campo nome não pode ser vazio")
         @Size(max = 255)
         String nome,
@@ -18,9 +19,9 @@ public record DtoCreateProfessor(
         @NotBlank(message = "O campo matricula não pode ser vazio")
         @Size(max = 6)
         String matricula,
-        @NotBlank(message = "O campo curso minitrado não pode ser vazio")
-        @Size(max = 100)
-        String cursoMinistrado,
-        String tipoUsuario
+        @NotBlank(message = "O campo curso não pode ser vazio")
+        String curso,
+        @NotNull(message = "O campo sala não pode ser vazio")
+        int sala
 ) {
 }

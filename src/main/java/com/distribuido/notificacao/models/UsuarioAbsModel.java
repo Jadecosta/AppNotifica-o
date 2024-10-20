@@ -7,12 +7,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
 @MappedSuperclass
-public class UsuarioModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public abstract class UsuarioAbsModel {
     @Column(nullable = false,length = 255)
     private String nome;
     @Column(nullable = false,length = 125)
@@ -22,6 +18,7 @@ public class UsuarioModel {
     @Column(nullable = false,length = 6,unique = true)
     private String matricula;
     private Boolean ativo;
+    private String tipoUsuario;
 
     public void ativar() {
         if(!this.getAtivo()) {
@@ -29,7 +26,7 @@ public class UsuarioModel {
         }
     }
     public void inativar() {
-        if(!this.getAtivo()) {
+        if(this.getAtivo()) {
             this.setAtivo(false);
         }
     }

@@ -4,6 +4,7 @@ import com.distribuido.notificacao.dtos.professor.DtoCreateProfessor;
 import com.distribuido.notificacao.dtos.professor.DtoDetailProfessor;
 import com.distribuido.notificacao.dtos.professor.DtoListProfessor;
 import com.distribuido.notificacao.dtos.professor.DtoUpdateProfessor;
+import com.distribuido.notificacao.service.impl.ProfessorServiceImpl;
 import com.distribuido.notificacao.service.intefaces.ProfessorService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/professor")
 public class ProfessorController {
     @Autowired
-    private ProfessorService service;
+    private ProfessorServiceImpl service;
 
     @PostMapping
     @Transactional

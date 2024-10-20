@@ -9,7 +9,8 @@ public record DtoDetailProfessor(
         String senha,
         String matricula,
         Boolean ativo,
-        String cursoMinistrado
+        String cursoMinistrado,
+        String tipoUsuario
 ) {
     public DtoDetailProfessor(ProfessorModel professor) {
         this(
@@ -19,7 +20,8 @@ public record DtoDetailProfessor(
                 professor.getSenha(),
                 professor.getMatricula(),
                 professor.getAtivo(),
-                professor.getCursoMinistrado()
+                professor.getCursoMinistrado(),
+                professor.getTipoUsuario()
         );
     }
 }
