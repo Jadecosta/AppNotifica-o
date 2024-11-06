@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial Admin</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Olá, <span id="user-name"> </span></h1>
+        <div class="button-group">
+            <a href="cadastrar_usuario.html">
+                <button class="action-button">
+                    <img src="../img/cdt_usuario.png" class="icon"> Cadastrar Usuário 
+                </button>
+            </a>
+            <a href="desativar_usuario.html">
+                <button class="action-button">
+                    <img src="../img/dst_usuario.png" class="icon"> Desativar usuário
+                </button>
+            </a>
+            <a href="mensagens_recebidas.html">
+                <button class="action-button">
+                    <img src="../img/mensagem.png" class="icon"> Mensagens recebidas
+                </button>
+            </a>
+            <a href="tela_notificação.html">
+                <button class="action-button">
+                    <img src="../img/notificacao.png" class="icon"> Criar notificação
+                </button>
+            </a>
+        </div>
+    </div>
+    <script src="../static/script.js"></script>
+    <script>
+        const userName = "João"; // Defina o nome do usuário aqui
+        document.getElementById("user-name").textContent = userName;
+    </script>
+</body>
+</html>

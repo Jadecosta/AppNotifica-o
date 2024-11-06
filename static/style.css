@@ -1,0 +1,349 @@
+/* ESTILO TELA_LOGIN */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+.login-container {
+    width: 300px;
+    background-color: #edf2fa;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Avatar */
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #525252;
+    margin-bottom: 15px;
+}
+
+/* Título e saudação */
+h1 {
+    font-size: 33px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 45px;
+    text-align: left;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #002f6c;
+    border-radius: 17px;
+    font-size: 14px;
+    
+}
+
+/* Botão de login */
+.login-btn {
+    width: 70%;
+    padding: 8px;
+    font-size: 16px;
+    background-color: #7b5bf2;
+    color: #fff;
+    border: none;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 80px auto 0 auto; /* Adiciona espaço acima do botão para separá-lo da caixa de texto */
+    text-align: center;
+}
+
+.login-btn:hover {
+    background-color: #421acf;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .avatar img {
+        width: 70px;
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .form-group label,
+    .form-group input {
+        font-size: 13px;
+    }
+
+    .login-btn {
+        padding: 8px;
+        font-size: 15px;
+    }
+}
+
+
+/* ESTILO TELA_NOTIFICAÇÃO */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 300px;
+    background-color: #edf2fa;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 10px;
+    color: #333;
+ 
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.button-group button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #002f6c;
+    border-radius: 17px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-group button.active {
+    background-color: #002f6c;
+    color: #fff;
+    border: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #002f6c;
+    border-radius: 17px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 150px;
+}
+
+.submit-btn {
+    width: 70%;
+    padding: 8px;
+    font-size: 15px;
+    background-color: #7b5bf2;
+    color: #fff;
+    border: none;
+    border-radius: 17px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; 
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #421acf;
+}
+
+
+/* Media query para dispositivos móveis */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .button-group button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        padding: 8px;
+        font-size: 15px;
+    }
+}
+
+/* ESTILO TELA_INICIAL */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do body */
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal da tela admin */
+.admin-container {
+    width: 300px;
+    height:500px;
+    background-color: #edf2fa;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Saudação */
+.admin-container h1 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Grupo de botões */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Botões de ação */
+.action-button {
+    display: flex;
+    margin-bottom: 8px;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #002f6c !important; 
+    color: #ffffff !important; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    text-decoration: none; 
+    outline: none;
+}
+
+.action-button:hover {
+    background-color: #ffffff !important;
+    color: #002f6c !important;
+    text-decoration: none; 
+}
+
+/* Estilo da imagem no botão */
+.icon {
+    width: 27px; /* Define a largura da imagem */
+    height: 27px; /* Define a altura da imagem */
+}
+
+@media (max-width: 480px) {
+    .admin-container {
+        padding: 15px;
+    }
+
+    .action-button {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
