@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mensagens Recebidas</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="message-container">
+    <h1>Mensagens Recebidas</h1>
+    <div class="message" onclick="toggleMessage(1)">
+        <div class="message-header">
+        <span>Mensagem 01</span>
+        <button class="toggle-button">&#x25B2;</button>
+        </div>
+        <div class="message-body" id="message-1">
+        
+        </div>
+    </div>
+    <div class="message" onclick="toggleMessage(1)">
+        <div class="message-header">
+        <span>Mensagem 02</span>
+        <button class="toggle-button">&#x25B2;</button>
+        </div>
+        <div class="message-body" id="message-1">
+        
+        </div>
+    </div>
+    <div class="message" onclick="toggleMessage(1)">
+        <div class="message-header">
+        <span>Mensagem 03</span>
+        <button class="toggle-button">&#x25B2;</button>
+        </div>
+        <div class="message-body" id="message-1">
+       
+        </div>
+    </div>
+    </div>
+
+<script>
+function toggleMessage(id) {
+  var element = document.getElementById('message-' + id);
+  var isVisible = element.style.display === 'block';
+  element.style.display = isVisible ? 'none' : 'block';
+  var button = element.previousElementSibling.querySelector('.toggle-button');
+  button.innerHTML = isVisible ? '&#x25BC;' : '&#x25B2;';
+}
+</script>
+
+</body>
+</html>

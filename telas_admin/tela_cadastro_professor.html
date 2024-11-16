@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Aluno</title>
+    <title>Cadastrar Professor</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <div class="cadastro-container">
-        <h1>Criar Novo Aluno</h1>
+        <h1>Criar Novo Professor</h1>
         <form>
-            <div class="form-group">
+            <div class="form-group-professor">
                 <label for="matricula">Matrícula</label>
                 <input type="text" id="matricula" placeholder="Digite a matrícula" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-professor">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="usuario@exemplo.com" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-professor">
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" placeholder="Fulano" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-professor">
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" placeholder="********" required>
             </div>
-            <div class="form-group">
+            <div class="form-group-professor">
                 <label for="curso">Curso</label>
                 <select id="curso" required>
                     <option value="">Selecione</option>
@@ -37,18 +37,7 @@
                     <option value="Direito">Direito</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="sala">Sala</label>
-                <select id="sala" required>
-                    <option value="">Selecione</option>
-                    <option value="101">101</option>
-                    <option value="102">102</option>
-                    <option value="201">201</option>
-                    <option value="202">202</option>
-                    <option value="301">301</option>
-                    <option value="302">302</option>
-                </select>
-            </div>
+            
             <button type="submit" class="submit-btn">Criar</button>
         </form>
     </div>

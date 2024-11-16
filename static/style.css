@@ -1,12 +1,11 @@
 /* ESTILO TELA_LOGIN */
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos gerais do body */
+
 body {
     display: flex;
     justify-content: center;
@@ -16,17 +15,17 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Container principal */
+
 .login-container {
     width: 300px;
     background-color: #edf2fa;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
-/* Avatar */
+
 .avatar img {
     width: 100px;
     height: 100px;
@@ -35,7 +34,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* Título e saudação */
+
 h1 {
     font-size: 33px;
     color: #333;
@@ -50,7 +49,7 @@ p {
     text-align: left;
 }
 
-/* Formulário */
+
 .form-group {
     margin-bottom: 15px;
     text-align: left;
@@ -66,13 +65,12 @@ p {
 .form-group input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #002f6c;
     border-radius: 17px;
     font-size: 14px;
     
 }
 
-/* Botão de login */
+
 .login-btn {
     width: 70%;
     padding: 8px;
@@ -84,7 +82,7 @@ p {
     cursor: pointer;
     transition: background-color 0.3s;
     display: block;
-    margin: 80px auto 0 auto; /* Adiciona espaço acima do botão para separá-lo da caixa de texto */
+    margin: 80px auto 0 auto; 
     text-align: center;
 }
 
@@ -92,7 +90,7 @@ p {
     background-color: #421acf;
 }
 
-/* Responsividade */
+
 @media (max-width: 480px) {
     .login-container {
         padding: 15px;
@@ -124,14 +122,13 @@ p {
 
 
 /* ESTILO TELA_NOTIFICAÇÃO */
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos gerais */
 body {
     display: flex;
     justify-content: center;
@@ -146,7 +143,7 @@ body {
     background-color: #edf2fa;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .container h2 {
@@ -168,9 +165,9 @@ body {
 .button-group button {
     flex: 1;
     padding: 10px;
-    border: 1px solid #002f6c;
-    border-radius: 17px;
-    background-color: #f7f7f7;
+    border: 1px solid #dadada;
+    border-radius: 8px;
+    background-color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -183,6 +180,7 @@ body {
 
 .form-group {
     margin-bottom: 15px;
+    
 }
 
 .form-group label {
@@ -196,9 +194,10 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #002f6c;
-    border-radius: 17px;
+    border: 1px solid;
+    border-radius: 8px;
     font-size: 14px;
+    border: 1px solid #dadada;
 }
 
 .form-group textarea {
@@ -227,7 +226,6 @@ body {
 }
 
 
-/* Media query para dispositivos móveis */
 @media (max-width: 480px) {
     .container {
         padding: 15px;
@@ -254,14 +252,14 @@ body {
 }
 
 /* ESTILO TELA_INICIAL */
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos gerais do body */
+
 body, html {
     display: flex;
     justify-content: center;
@@ -271,18 +269,17 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-/* Container principal da tela admin */
 .admin-container {
     width: 300px;
     height:500px;
     background-color: #edf2fa;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
-/* Saudação */
+
 .admin-container h1 {
     font-size: 20px;
     color: #333;
@@ -291,14 +288,14 @@ body, html {
     text-align: center;
 }
 
-/* Grupo de botões */
+
 .button-group {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Botões de ação */
+
 .action-button {
     display: flex;
     margin-bottom: 8px;
@@ -315,9 +312,10 @@ body, html {
     cursor: pointer;
     transition: background-color 0.3s;
     font-weight: bold;
-    text-decoration: none; 
+    text-decoration: none !important; 
     outline: none;
 }
+
 
 .action-button:hover {
     background-color: #ffffff !important;
@@ -325,10 +323,10 @@ body, html {
     text-decoration: none; 
 }
 
-/* Estilo da imagem no botão */
+
 .icon {
-    width: 27px; /* Define a largura da imagem */
-    height: 27px; /* Define a altura da imagem */
+    width: 27px;
+    height: 27px; 
 }
 
 @media (max-width: 480px) {
@@ -353,7 +351,7 @@ body, html {
     box-sizing: border-box;
 }
 
-/* Estilos gerais do body */
+
 body, html {
     display: flex;
     justify-content: center;
@@ -364,13 +362,13 @@ body, html {
     padding: 10px;
 }
 
-/* Container principal da tela de cadastro */
+
 .cadastro-container {
     width: 300px;
     background-color: #edf2fa;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .cadastro-container h1 {
@@ -380,10 +378,9 @@ body, html {
     text-align: center;
 }
 
-/* Estilos dos campos de formulário */
 .form-group {
     margin-bottom: 15px;
-    text-align: left;
+    text-align: left; 
 }
 
 .form-group label {
@@ -399,11 +396,16 @@ body, html {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 17px;
+    border-radius: 8px;
     background-color: #f1f1f1;
     color: #333;
     outline: none;
     transition: border-color 0.3s;
+}
+
+.form-group select option {
+    background-color: #333; 
+    color: #ffffff; 
 }
 
 .form-group input:focus,
@@ -411,11 +413,11 @@ body, html {
     border-color: #7b5bf2;
 }
 
-/* Botão de enviar */
+
 .submit-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
     background-color: #7b5bf2;
     color: #fff;
     border: none;
@@ -430,7 +432,7 @@ body, html {
     background-color: #5e31ff;
 }
 
-/* Responsividade para telas menores */
+
 @media (max-width: 480px) {
     .cadastro-container {
         padding: 15px;
@@ -455,3 +457,181 @@ body, html {
     }
 }
 
+/* ESTILO TELA_CADASTRO_PROFESSOR*/
+.form-group-professor {
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+.form-group-professor label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group-professor input,
+.form-group-professor select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group-professor select option {
+    background-color: #333; 
+    color: #ffffff; 
+}
+
+.form-group-professor input:focus,
+.form-group-professor select:focus {
+    border-color: #7b5bf2;
+}
+
+.form-group-professor input,
+.form-group-professor select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    background-color: #ffffff; 
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group-professor select option {
+    background-color: #ffffff; 
+    color: #333; 
+}
+
+.form-group-professor input:focus,
+.form-group-professor select:focus {
+    border-color: #7b5bf2; 
+}
+
+
+/* ESTILO TELA_CADASTRO_ALUNO*/
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    background-color: #ffffff; 
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group select option {
+    background-color: #ffffff; 
+    color: #333; 
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #7b5bf2; 
+}
+
+
+/* ESTILO TELA_RECEBER_MENSAGEM*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+.message-container {
+    width: 300px;
+    background-color: #edf2fa;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.message-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 90px;
+    text-align: center;
+}
+
+
+.message {
+    margin-bottom: 25px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #002f6c;
+    color: white;
+    border-radius: 8px;
+}
+
+.message-body {
+    display: none;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+}
+
+button.toggle-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button {
+    background-color: #002f6c;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #421acf;
+}
+
+@media (max-width: 480px) {
+    .message-container {
+        padding: 15px;
+    }
+
+    .header {
+        font-size: 18px;
+    }
+
+    .message-header,
+    .message-body button {
+        font-size: 13px;
+    }
+}
