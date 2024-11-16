@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Cadastro Aluno</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="cadastro-container">
+        <h1>Criar Novo Aluno</h1>
+        <form>
+            <div class="form-group">
+                <label for="matricula">Matrícula</label>
+                <input type="text" id="matricula" placeholder="Digite a matrícula" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="usuario@exemplo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Fulano" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="********" required>
+            </div>
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <select id="curso" required>
+                    <option value="">Selecione</option>
+                    <option value="curso1">Curso 1</option>
+                    <option value="curso2">Curso 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sala">Sala</label>
+                <select id="sala" required>
+                    <option value="">Selecione</option>
+                    <option value="sala1">Sala 1</option>
+                    <option value="sala2">Sala 2</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Criar</button>
+        </form>
+    </div>
+</body>
+</html>
